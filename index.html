@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Estoque · DDA Metalúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="app-shell">
+
+  <!-- ============ MENU LATERAL ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">DDA <span>ESTOQUE</span></div>
+      <div class="brand__sub">Metalúrgica &middot; Pastilhas</div>
+    </div>
+
+    <ul class="nav">
+      <li class="nav__item">
+        <a href="index.html" class="is-active" aria-current="page">
+          <svg class="nav__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="pastilhas.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          Pastilhas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="fabricantes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>
+          Fabricantes
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="movimentacoes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M17 3v6l3-3"/><path d="M17 9l-3-3"/><path d="M7 21v-6l-3 3"/><path d="M7 15l3 3"/><path d="M17 9H7"/><path d="M7 15h10"/></svg>
+          Entradas &amp; Saídas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="estoque.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="10" width="3" height="9"/><rect x="11" y="6" width="3" height="13"/><rect x="16" y="13" width="3" height="6"/></svg>
+          Acompanhar estoque
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar__footer">Projeto Integrador SENAI · SA1</div>
+  </aside>
+
+  <!-- ============ CONTEÚDO ============ -->
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Painel de estoque</h1>
+        <p>Visão geral das pastilhas, movimentações e alertas do dia</p>
+      </div>
+      <div class="topbar__user">
+        <span class="avatar">RM</span>
+        <span>Rafael Mendes<br><small>Almoxarifado</small></span>
+      </div>
+    </header>
+
+    <main id="conteudo" class="content">
+
+      <section aria-labelledby="stats-title">
+        <h2 id="stats-title" class="eyebrow">Indicadores</h2>
+        <div class="grid grid--stats">
+          <div class="stat-card">
+            <span class="stat-card__label">Pastilhas cadastradas</span>
+            <div class="stat-card__value">184</div>
+            <div class="stat-card__delta">12 fabricantes vinculados</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Estoque baixo</span>
+            <div class="stat-card__value is-warn">9</div>
+            <div class="stat-card__delta">abaixo do mínimo definido</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Sem estoque</span>
+            <div class="stat-card__value is-alert">2</div>
+            <div class="stat-card__delta">requer reposição imediata</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Movimentações hoje</span>
+            <div class="stat-card__value">27</div>
+            <div class="stat-card__delta">18 entradas &middot; 9 saídas</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:26px" aria-labelledby="acoes-title">
+        <h2 id="acoes-title" class="eyebrow">Ações rápidas</h2>
+        <div class="quick-actions">
+          <a class="quick-action" href="movimentacoes.html#nova">
+            <span class="quick-action__icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span>
+              <span class="quick-action__title" style="display:block">Nova entrada</span>
+              <span class="quick-action__sub">Registrar recebimento de material</span>
+            </span>
+          </a>
+          <a class="quick-action" href="movimentacoes.html#nova">
+            <span class="quick-action__icon"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span>
+            <span>
+              <span class="quick-action__title" style="display:block">Nova saída</span>
+              <span class="quick-action__sub">Registrar consumo de pastilhas</span>
+            </span>
+          </a>
+          <a class="quick-action" href="pastilhas.html#novo">
+            <span class="quick-action__icon"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>
+            <span>
+              <span class="quick-action__title" style="display:block">Cadastrar pastilha</span>
+              <span class="quick-action__sub">Novo item no catálogo</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section style="margin-top:26px" aria-labelledby="criticos-title">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="criticos-title">Itens críticos</h2>
+            <a class="btn btn--ghost btn--sm" href="estoque.html">Ver estoque completo</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption class="visually-hidden">Pastilhas com estoque abaixo ou próximo do mínimo</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Descrição</th>
+                  <th scope="col">Fabricante</th>
+                  <th scope="col">Nível de estoque</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-1042</span></td>
+                  <td data-label="Descrição">Pastilha CNMG 120408 classe P</td>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--out" style="--pct:0%; --min-pct:35%" data-atual="0" data-total="20" data-minimo="7">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">0 / 20 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--out">Sem estoque</span></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0877</span></td>
+                  <td data-label="Descrição">Pastilha DNMG 150608 classe M</td>
+                  <td data-label="Fabricante">Mitsubishi Materials</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--out" style="--pct:5%; --min-pct:30%" data-atual="1" data-total="15" data-minimo="5">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">1 / 15 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--out">Sem estoque</span></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0231</span></td>
+                  <td data-label="Descrição">Pastilha TNMG 160408 classe K</td>
+                  <td data-label="Fabricante">Kennametal</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--low" style="--pct:22%; --min-pct:40%" data-atual="6" data-total="27" data-minimo="11">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">6 / 27 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--low">Estoque baixo</span></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0509</span></td>
+                  <td data-label="Descrição">Pastilha WNMG 080408 classe P</td>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--low" style="--pct:30%; --min-pct:35%" data-atual="9" data-total="30" data-minimo="11">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">9 / 30 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--low">Estoque baixo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">DDA Metalúrgica &middot; Sistema de Controle de Estoque &middot; Projeto Integrador SENAI Alagoas</footer>
+    </main>
+  </div>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>

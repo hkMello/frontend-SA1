@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acompanhamento de Estoque · DDA Metalúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">DDA <span>ESTOQUE</span></div>
+      <div class="brand__sub">Metalúrgica &middot; Pastilhas</div>
+    </div>
+    <ul class="nav">
+      <li class="nav__item">
+        <a href="index.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="pastilhas.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          Pastilhas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="fabricantes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>
+          Fabricantes
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="movimentacoes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M17 3v6l3-3"/><path d="M17 9l-3-3"/><path d="M7 21v-6l-3 3"/><path d="M7 15l3 3"/><path d="M17 9H7"/><path d="M7 15h10"/></svg>
+          Entradas &amp; Saídas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="estoque.html" class="is-active" aria-current="page">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="10" width="3" height="9"/><rect x="11" y="6" width="3" height="13"/><rect x="16" y="13" width="3" height="6"/></svg>
+          Acompanhar estoque
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">Projeto Integrador SENAI · SA1</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Acompanhamento de estoque</h1>
+        <p>Visão consolidada do nível de estoque de todas as pastilhas</p>
+      </div>
+      <div class="topbar__user">
+        <span class="avatar">RM</span>
+        <span>Rafael Mendes<br><small>Almoxarifado</small></span>
+      </div>
+    </header>
+
+    <main id="conteudo" class="content">
+
+      <section aria-labelledby="lista-title">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="lista-title">Estoque atual</h2>
+            <div class="filter-bar">
+              <select aria-label="Filtrar por fabricante">
+                <option value="">Todos os fabricantes</option>
+                <option>Sandvik Coromant</option>
+                <option>Mitsubishi Materials</option>
+                <option>Kennametal</option>
+              </select>
+              <select aria-label="Filtrar por categoria">
+                <option value="">Todas as categorias</option>
+                <option>Torneamento</option>
+                <option>Fresamento</option>
+                <option>Furação</option>
+              </select>
+              <select aria-label="Filtrar por status">
+                <option value="">Todos os status</option>
+                <option>Sem estoque</option>
+                <option>Estoque baixo</option>
+                <option>Normal</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Descrição</th>
+                  <th scope="col">Fabricante</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Nível de estoque</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Histórico</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-1042</span></td>
+                  <td data-label="Descrição">Pastilha CNMG 120408 classe P</td>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="Categoria">Torneamento</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--out" style="--pct:0%; --min-pct:35%" data-atual="0" data-total="20" data-minimo="7">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">0 / 20 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--out">Sem estoque</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-1042">Ver movimentações</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0877</span></td>
+                  <td data-label="Descrição">Pastilha DNMG 150608 classe M</td>
+                  <td data-label="Fabricante">Mitsubishi Materials</td>
+                  <td data-label="Categoria">Fresamento</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--out" style="--pct:5%; --min-pct:30%" data-atual="1" data-total="15" data-minimo="5">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">1 / 15 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--out">Sem estoque</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-0877">Ver movimentações</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0231</span></td>
+                  <td data-label="Descrição">Pastilha TNMG 160408 classe K</td>
+                  <td data-label="Fabricante">Kennametal</td>
+                  <td data-label="Categoria">Torneamento</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--low" style="--pct:22%; --min-pct:40%" data-atual="6" data-total="27" data-minimo="11">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">6 / 27 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--low">Estoque baixo</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-0231">Ver movimentações</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0509</span></td>
+                  <td data-label="Descrição">Pastilha WNMG 080408 classe P</td>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="Categoria">Torneamento</td>
+                  <td data-label="Nível">
+                    <div class="gauge gauge--low" style="--pct:30%; --min-pct:35%" data-atual="9" data-total="30" data-minimo="11">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">9 / 30 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--low">Estoque baixo</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-0509">Ver movimentações</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0688</span></td>
+                  <td data-label="Descrição">Pastilha SNMG 120408 classe M</td>
+                  <td data-label="Fabricante">Mitsubishi Materials</td>
+                  <td data-label="Categoria">Fresamento</td>
+                  <td data-label="Nível">
+                    <div class="gauge" style="--pct:70%; --min-pct:20%" data-atual="14" data-total="20" data-minimo="4">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">14 / 20 cx.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--ok">Normal</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-0688">Ver movimentações</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0342</span></td>
+                  <td data-label="Descrição">Pastilha APMT 1135 classe H</td>
+                  <td data-label="Fabricante">Iscar</td>
+                  <td data-label="Categoria">Furação</td>
+                  <td data-label="Nível">
+                    <div class="gauge" style="--pct:85%; --min-pct:15%" data-atual="34" data-total="40" data-minimo="6">
+                      <div class="gauge__track"><div class="gauge__fill"></div><div class="gauge__min-mark"></div></div>
+                      <span class="gauge__value">34 / 40 un.</span>
+                    </div>
+                  </td>
+                  <td data-label="Status"><span class="badge badge--ok">Normal</span></td>
+                  <td data-label="Histórico"><a href="movimentacoes.html?pastilha=PT-0342">Ver movimentações</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">DDA Metalúrgica &middot; Sistema de Controle de Estoque &middot; Projeto Integrador SENAI Alagoas</footer>
+    </main>
+  </div>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>

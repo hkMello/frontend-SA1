@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Pastilhas · DDA Metalúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">DDA <span>ESTOQUE</span></div>
+      <div class="brand__sub">Metalúrgica &middot; Pastilhas</div>
+    </div>
+    <ul class="nav">
+      <li class="nav__item">
+        <a href="index.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="pastilhas.html" class="is-active" aria-current="page">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          Pastilhas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="fabricantes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>
+          Fabricantes
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="movimentacoes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M17 3v6l3-3"/><path d="M17 9l-3-3"/><path d="M7 21v-6l-3 3"/><path d="M7 15l3 3"/><path d="M17 9H7"/><path d="M7 15h10"/></svg>
+          Entradas &amp; Saídas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="estoque.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="10" width="3" height="9"/><rect x="11" y="6" width="3" height="13"/><rect x="16" y="13" width="3" height="6"/></svg>
+          Acompanhar estoque
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">Projeto Integrador SENAI · SA1</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Cadastro de pastilhas</h1>
+        <p>Cadastre novos itens e gerencie o catálogo de pastilhas industriais</p>
+      </div>
+      <div class="topbar__user">
+        <span class="avatar">RM</span>
+        <span>Rafael Mendes<br><small>Almoxarifado</small></span>
+      </div>
+    </header>
+
+    <main id="conteudo" class="content">
+
+      <section id="novo" aria-labelledby="form-title" style="margin-bottom:26px">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="form-title">Nova pastilha</h2>
+            <span class="eyebrow" style="margin:0">Todos os campos com * são obrigatórios</span>
+          </div>
+          <div class="card__body">
+            <form novalidate>
+              <fieldset>
+                <legend>Identificação</legend>
+                <div class="grid grid--form">
+                  <div class="field">
+                    <label for="codigo">Código / referência <span class="required">*</span></label>
+                    <input type="text" id="codigo" name="codigo" placeholder="Ex.: PT-1042" required>
+                    <small>Código interno usado para busca e nas movimentações</small>
+                  </div>
+                  <div class="field">
+                    <label for="descricao">Descrição <span class="required">*</span></label>
+                    <input type="text" id="descricao" name="descricao" placeholder="Ex.: Pastilha CNMG 120408 classe P" required>
+                  </div>
+                  <div class="field">
+                    <label for="fabricante">Fabricante <span class="required">*</span></label>
+                    <select id="fabricante" name="fabricante" required>
+                      <option value="" disabled selected>Selecione um fabricante</option>
+                      <option>Sandvik Coromant</option>
+                      <option>Mitsubishi Materials</option>
+                      <option>Kennametal</option>
+                      <option>Iscar</option>
+                    </select>
+                    <small>Não encontrou? <a href="fabricantes.html#novo">Cadastre um fabricante</a></small>
+                  </div>
+                  <div class="field">
+                    <label for="categoria">Categoria / tipo</label>
+                    <select id="categoria" name="categoria">
+                      <option value="" disabled selected>Selecione</option>
+                      <option>Torneamento</option>
+                      <option>Fresamento</option>
+                      <option>Furação</option>
+                      <option>Rosqueamento</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Controle de estoque</legend>
+                <div class="grid grid--form">
+                  <div class="field">
+                    <label for="unidade">Unidade de medida <span class="required">*</span></label>
+                    <select id="unidade" name="unidade" required>
+                      <option value="" disabled selected>Selecione</option>
+                      <option>Unidade (un.)</option>
+                      <option>Caixa (cx.)</option>
+                      <option>Jogo (jg.)</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="minimo">
+                      Estoque mínimo <span class="required">*</span>
+                      <i class="help-icon" title="Quantidade que aciona o alerta de estoque baixo no Painel e na tela de Acompanhamento">?</i>
+                    </label>
+                    <input type="number" id="minimo" name="minimo" min="0" step="1" placeholder="Ex.: 20" required>
+                  </div>
+                  <div class="field">
+                    <label for="atual">Estoque atual</label>
+                    <input type="number" id="atual" name="atual" min="0" step="1" value="0" readonly aria-readonly="true">
+                    <small>Calculado automaticamente pelas movimentações registradas</small>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button type="reset" class="btn btn--ghost">Cancelar</button>
+                <button type="submit" class="btn btn--primary">Salvar pastilha</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="lista-title">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="lista-title">Pastilhas cadastradas</h2>
+            <div class="filter-bar">
+              <label class="visually-hidden" for="busca-pastilha">Buscar pastilha</label>
+              <input type="search" id="busca-pastilha" placeholder="Buscar por código ou descrição&hellip;">
+              <label class="visually-hidden" for="filtro-fabricante">Filtrar por fabricante</label>
+              <select id="filtro-fabricante">
+                <option value="">Todos os fabricantes</option>
+                <option>Sandvik Coromant</option>
+                <option>Mitsubishi Materials</option>
+                <option>Kennametal</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Descrição</th>
+                  <th scope="col">Fabricante</th>
+                  <th scope="col">Unidade</th>
+                  <th scope="col">Estoque atual</th>
+                  <th scope="col">Mínimo</th>
+                  <th scope="col"><span class="visually-hidden">Ações</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-1042</span></td>
+                  <td data-label="Descrição">Pastilha CNMG 120408 classe P</td>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="Unidade" class="mono">un.</td>
+                  <td data-label="Estoque atual" class="mono">0</td>
+                  <td data-label="Mínimo" class="mono">20</td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar pastilha PT-1042">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir pastilha PT-1042">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0231</span></td>
+                  <td data-label="Descrição">Pastilha TNMG 160408 classe K</td>
+                  <td data-label="Fabricante">Kennametal</td>
+                  <td data-label="Unidade" class="mono">un.</td>
+                  <td data-label="Estoque atual" class="mono">6</td>
+                  <td data-label="Mínimo" class="mono">27</td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar pastilha PT-0231">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir pastilha PT-0231">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Código"><span class="tag-code">PT-0688</span></td>
+                  <td data-label="Descrição">Pastilha SNMG 120408 classe M</td>
+                  <td data-label="Fabricante">Mitsubishi Materials</td>
+                  <td data-label="Unidade" class="mono">cx.</td>
+                  <td data-label="Estoque atual" class="mono">14</td>
+                  <td data-label="Mínimo" class="mono">10</td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar pastilha PT-0688">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir pastilha PT-0688">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">DDA Metalúrgica &middot; Sistema de Controle de Estoque &middot; Projeto Integrador SENAI Alagoas</footer>
+    </main>
+  </div>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>
