@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fabricantes · DDA Metalúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">DDA <span>ESTOQUE</span></div>
+      <div class="brand__sub">Metalúrgica &middot; Pastilhas</div>
+    </div>
+    <ul class="nav">
+      <li class="nav__item">
+        <a href="index.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="pastilhas.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          Pastilhas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="fabricantes.html" class="is-active" aria-current="page">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>
+          Fabricantes
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="movimentacoes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M17 3v6l3-3"/><path d="M17 9l-3-3"/><path d="M7 21v-6l-3 3"/><path d="M7 15l3 3"/><path d="M17 9H7"/><path d="M7 15h10"/></svg>
+          Entradas &amp; Saídas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="estoque.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="10" width="3" height="9"/><rect x="11" y="6" width="3" height="13"/><rect x="16" y="13" width="3" height="6"/></svg>
+          Acompanhar estoque
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">Projeto Integrador SENAI · SA1</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Fabricantes</h1>
+        <p>Cadastre fornecedores e acompanhe quantas pastilhas cada um fornece</p>
+      </div>
+      <div class="topbar__user">
+        <span class="avatar">RM</span>
+        <span>Rafael Mendes<br><small>Almoxarifado</small></span>
+      </div>
+    </header>
+
+    <main id="conteudo" class="content">
+
+      <section id="novo" aria-labelledby="form-title" style="margin-bottom:26px">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="form-title">Novo fabricante</h2>
+            <span class="eyebrow" style="margin:0">Todos os campos com * são obrigatórios</span>
+          </div>
+          <div class="card__body">
+            <form novalidate>
+              <div class="grid grid--form">
+                <div class="field">
+                  <label for="nome">Nome do fabricante <span class="required">*</span></label>
+                  <input type="text" id="nome" name="nome" placeholder="Ex.: Sandvik Coromant" required>
+                </div>
+                <div class="field">
+                  <label for="cnpj">CNPJ <span class="required">*</span></label>
+                  <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" required>
+                </div>
+                <div class="field">
+                  <label for="contato">Nome do contato</label>
+                  <input type="text" id="contato" name="contato" placeholder="Ex.: Carla Souza">
+                </div>
+                <div class="field">
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" placeholder="(82) 90000-0000">
+                </div>
+                <div class="field field--full">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" placeholder="contato@fabricante.com.br">
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="reset" class="btn btn--ghost">Cancelar</button>
+                <button type="submit" class="btn btn--primary">Salvar fabricante</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="lista-title">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="lista-title">Fabricantes cadastrados</h2>
+            <div class="filter-bar">
+              <label class="visually-hidden" for="busca-fabricante">Buscar fabricante</label>
+              <input type="search" id="busca-fabricante" placeholder="Buscar por nome ou CNPJ&hellip;">
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Fabricante</th>
+                  <th scope="col">CNPJ</th>
+                  <th scope="col">Contato</th>
+                  <th scope="col">Pastilhas vinculadas</th>
+                  <th scope="col"><span class="visually-hidden">Ações</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Fabricante">Sandvik Coromant</td>
+                  <td data-label="CNPJ" class="mono">04.229.761/0001-05</td>
+                  <td data-label="Contato">Carla Souza &middot; (82) 90000-0000</td>
+                  <td data-label="Pastilhas vinculadas"><span class="badge badge--ok">42 itens</span></td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar fabricante Sandvik Coromant">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir fabricante Sandvik Coromant">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Fabricante">Mitsubishi Materials</td>
+                  <td data-label="CNPJ" class="mono">07.845.221/0001-90</td>
+                  <td data-label="Contato">João Ferreira &middot; (11) 98888-2222</td>
+                  <td data-label="Pastilhas vinculadas"><span class="badge badge--ok">31 itens</span></td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar fabricante Mitsubishi Materials">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir fabricante Mitsubishi Materials">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Fabricante">Kennametal</td>
+                  <td data-label="CNPJ" class="mono">12.334.556/0001-21</td>
+                  <td data-label="Contato">Renata Alves &middot; (19) 97777-4444</td>
+                  <td data-label="Pastilhas vinculadas"><span class="badge badge--ok">27 itens</span></td>
+                  <td data-label="Ações">
+                    <div class="row-actions">
+                      <button class="icon-btn" title="Editar" aria-label="Editar fabricante Kennametal">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+                      </button>
+                      <button class="icon-btn danger" title="Excluir" aria-label="Excluir fabricante Kennametal">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">DDA Metalúrgica &middot; Sistema de Controle de Estoque &middot; Projeto Integrador SENAI Alagoas</footer>
+    </main>
+  </div>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>

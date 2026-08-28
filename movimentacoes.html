@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entradas &amp; Saídas · DDA Metalúrgica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">DDA <span>ESTOQUE</span></div>
+      <div class="brand__sub">Metalúrgica &middot; Pastilhas</div>
+    </div>
+    <ul class="nav">
+      <li class="nav__item">
+        <a href="index.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Painel
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="pastilhas.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          Pastilhas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="fabricantes.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>
+          Fabricantes
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="movimentacoes.html" class="is-active" aria-current="page">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M17 3v6l3-3"/><path d="M17 9l-3-3"/><path d="M7 21v-6l-3 3"/><path d="M7 15l3 3"/><path d="M17 9H7"/><path d="M7 15h10"/></svg>
+          Entradas &amp; Saídas
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="estoque.html">
+          <svg class="nav__icon" viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="10" width="3" height="9"/><rect x="11" y="6" width="3" height="13"/><rect x="16" y="13" width="3" height="6"/></svg>
+          Acompanhar estoque
+        </a>
+      </li>
+    </ul>
+    <div class="sidebar__footer">Projeto Integrador SENAI · SA1</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Entradas &amp; saídas</h1>
+        <p>Registre movimentações de materiais e consulte o histórico</p>
+      </div>
+      <div class="topbar__user">
+        <span class="avatar">RM</span>
+        <span>Rafael Mendes<br><small>Almoxarifado</small></span>
+      </div>
+    </header>
+
+    <main id="conteudo" class="content">
+
+      <section id="nova" aria-labelledby="form-title" style="margin-bottom:26px">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="form-title">Nova movimentação</h2>
+          </div>
+          <div class="card__body">
+            <form novalidate>
+              <div class="field" style="margin-bottom:18px">
+                <label id="tipo-label">Tipo de movimentação <span class="required">*</span></label>
+                <div class="segmented" role="radiogroup" aria-labelledby="tipo-label">
+                  <input type="radio" id="tipo-entrada" name="tipo" checked>
+                  <label class="seg--in" for="tipo-entrada">↓ Entrada</label>
+                  <input type="radio" id="tipo-saida" name="tipo">
+                  <label class="seg--out" for="tipo-saida">↑ Saída</label>
+                </div>
+              </div>
+
+              <div class="grid grid--form">
+                <div class="field field--full">
+                  <label for="pastilha">Pastilha <span class="required">*</span></label>
+                  <input type="text" id="pastilha" name="pastilha" list="lista-pastilhas" placeholder="Busque por código ou descrição&hellip;" required>
+                  <datalist id="lista-pastilhas">
+                    <option value="PT-1042 — Pastilha CNMG 120408 classe P">
+                    <option value="PT-0231 — Pastilha TNMG 160408 classe K">
+                    <option value="PT-0688 — Pastilha SNMG 120408 classe M">
+                  </datalist>
+                  <small>Selecione um item já cadastrado para evitar divergência de nomes</small>
+                </div>
+                <div class="field">
+                  <label for="quantidade">Quantidade <span class="required">*</span></label>
+                  <input type="number" id="quantidade" name="quantidade" min="1" step="1" placeholder="Ex.: 10" required>
+                  <span class="field-error">Quantidade deve ser maior que zero</span>
+                </div>
+                <div class="field">
+                  <label for="data">Data <span class="required">*</span></label>
+                  <input type="date" id="data" name="data" required>
+                </div>
+                <div class="field">
+                  <label for="responsavel">Responsável <span class="required">*</span></label>
+                  <input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável" required>
+                </div>
+                <div class="field field--full">
+                  <label for="observacao">Observação</label>
+                  <textarea id="observacao" name="observacao" rows="2" placeholder="Ex.: nota fiscal, ordem de produção, motivo da saída&hellip;"></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="reset" class="btn btn--ghost">Cancelar</button>
+                <button type="submit" class="btn btn--primary">Registrar movimentação</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="historico-title">
+        <div class="card">
+          <div class="card__header">
+            <h2 id="historico-title">Histórico de movimentações</h2>
+            <div class="filter-bar">
+              <select aria-label="Filtrar por tipo">
+                <option value="">Todos os tipos</option>
+                <option>Entrada</option>
+                <option>Saída</option>
+              </select>
+              <input type="date" aria-label="Filtrar por período">
+              <label class="visually-hidden" for="busca-mov">Buscar pastilha</label>
+              <input type="search" id="busca-mov" placeholder="Buscar por pastilha&hellip;">
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Código</th>
+                  <th scope="col">Pastilha</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Responsável</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Data" class="mono">28/08/2026</td>
+                  <td data-label="Tipo"><span class="badge badge--in">Entrada</span></td>
+                  <td data-label="Código"><span class="tag-code">PT-0688</span></td>
+                  <td data-label="Pastilha">Pastilha SNMG 120408 classe M</td>
+                  <td data-label="Quantidade" class="mono">+20</td>
+                  <td data-label="Responsável">Rafael Mendes</td>
+                </tr>
+                <tr>
+                  <td data-label="Data" class="mono">28/08/2026</td>
+                  <td data-label="Tipo"><span class="badge badge--outmv">Saída</span></td>
+                  <td data-label="Código"><span class="tag-code">PT-0231</span></td>
+                  <td data-label="Pastilha">Pastilha TNMG 160408 classe K</td>
+                  <td data-label="Quantidade" class="mono">&minus;4</td>
+                  <td data-label="Responsável">Diego Lima</td>
+                </tr>
+                <tr>
+                  <td data-label="Data" class="mono">27/08/2026</td>
+                  <td data-label="Tipo"><span class="badge badge--outmv">Saída</span></td>
+                  <td data-label="Código"><span class="tag-code">PT-1042</span></td>
+                  <td data-label="Pastilha">Pastilha CNMG 120408 classe P</td>
+                  <td data-label="Quantidade" class="mono">&minus;12</td>
+                  <td data-label="Responsável">Diego Lima</td>
+                </tr>
+                <tr>
+                  <td data-label="Data" class="mono">26/08/2026</td>
+                  <td data-label="Tipo"><span class="badge badge--in">Entrada</span></td>
+                  <td data-label="Código"><span class="tag-code">PT-0231</span></td>
+                  <td data-label="Pastilha">Pastilha TNMG 160408 classe K</td>
+                  <td data-label="Quantidade" class="mono">+15</td>
+                  <td data-label="Responsável">Rafael Mendes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer">DDA Metalúrgica &middot; Sistema de Controle de Estoque &middot; Projeto Integrador SENAI Alagoas</footer>
+    </main>
+  </div>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>
