@@ -1,16 +1,8 @@
-/* ======================================================
-   DDA Metalúrgica — Sistema de Controle de Estoque
-   JS de apoio à interface (validação, filtro, feedback)
-   Sem persistência de dados — isso fica para a SA2
-   ====================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('form').forEach(initFormValidation);
   document.querySelectorAll('.card').forEach(initTableFilter);
   initGauges();
 });
-
-/* ---------- Validação de formulários ---------- */
 
 function initFormValidation(form) {
   form.addEventListener('submit', (event) => {
@@ -82,8 +74,6 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-/* ---------- Busca e filtro de tabelas ---------- */
-
 function initTableFilter(card) {
   const filterBar = card.querySelector('.filter-bar');
   const table = card.querySelector('table');
@@ -140,10 +130,6 @@ function toggleEmptyRow(tbody, rows, visibleCount) {
   }
 }
 
-/* ---------- Indicadores de nível de estoque (gauge) ---------- */
-/* Lê os dados numéricos em data-atual / data-minimo / data-total e
-   calcula a largura da barra, evitando depender de valores fixos no CSS. */
-
 function initGauges() {
   document.querySelectorAll('.gauge[data-atual]').forEach((gauge) => {
     const atual = Number(gauge.dataset.atual || 0);
@@ -165,8 +151,6 @@ function initGauges() {
     }
   });
 }
-
-/* ---------- Toast de feedback ---------- */
 
 function showToast(message, type = 'success') {
   let container = document.querySelector('.toast-container');
