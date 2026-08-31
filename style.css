@@ -1,10 +1,4 @@
-/* ======================================================
-   DDA Metalúrgica — Sistema de Controle de Estoque
-   Design tokens: paleta industrial (aço, laranja de segurança)
-   ====================================================== */
-
 :root {
-  /* Cor */
   --bg: #eef1f3;
   --surface: #ffffff;
   --surface-alt: #f6f8fa;
@@ -23,13 +17,9 @@
   --danger-tint: #fbe8e6;
   --border: #d7dce1;
   --border-strong: #b7c0c9;
-
-  /* Tipografia */
   --font-display: 'Oswald', 'Arial Narrow', sans-serif;
   --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-
-  /* Escala */
   --radius-s: 3px;
   --radius-m: 6px;
   --shadow-card: 0 1px 2px rgba(27, 36, 48, 0.06), 0 1px 1px rgba(27, 36, 48, 0.08);
@@ -62,10 +52,6 @@ p { margin: 0 0 12px; color: var(--ink-soft); }
 a { color: var(--steel); }
 
 button, input, select, textarea { font-family: inherit; font-size: inherit; }
-
-/* ----------------------------------------------------
-   Layout: sidebar + main
-   ---------------------------------------------------- */
 
 .app-shell {
   display: flex;
@@ -204,10 +190,6 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; }
   flex: 1;
 }
 
-/* ----------------------------------------------------
-   Componentes utilitários
-   ---------------------------------------------------- */
-
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -247,8 +229,6 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; }
 .grid--2col { grid-template-columns: 1.15fr 1fr; align-items: start; }
 .grid--form { grid-template-columns: repeat(2, 1fr); gap: 16px 20px; }
 
-/* Botões */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -281,8 +261,6 @@ button, input, select, textarea { font-family: inherit; font-size: inherit; }
 .btn--danger-ghost:hover { background: var(--danger-tint); }
 
 .btn--sm { padding: 6px 12px; font-size: 12.5px; }
-
-/* Formulários */
 
 .field {
   display: flex;
@@ -372,8 +350,6 @@ legend {
   border-top: 1px solid var(--border);
 }
 
-/* Tabelas */
-
 .table-wrap { overflow-x: auto; }
 
 table {
@@ -424,8 +400,6 @@ tbody tr:last-child td { border-bottom: none; }
 .icon-btn.danger:hover { color: var(--danger); border-color: var(--danger); }
 .icon-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; }
 
-/* Badges / status */
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -444,10 +418,6 @@ tbody tr:last-child td { border-bottom: none; }
 .badge--out { background: var(--danger-tint); color: var(--danger); }
 .badge--in { background: var(--success-tint); color: var(--success); }
 .badge--outmv { background: var(--danger-tint); color: var(--danger); }
-
-/* ----------------------------------------------------
-   Elemento assinatura: gauge de nível de estoque
-   ---------------------------------------------------- */
 
 .gauge {
   display: flex;
@@ -494,8 +464,6 @@ tbody tr:last-child td { border-bottom: none; }
   white-space: nowrap;
 }
 
-/* Stat cards */
-
 .stat-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -529,8 +497,6 @@ tbody tr:last-child td { border-bottom: none; }
   color: var(--ink-faint);
   margin-top: 6px;
 }
-
-/* Quick actions no dashboard */
 
 .quick-actions {
   display: flex;
@@ -574,8 +540,6 @@ tbody tr:last-child td { border-bottom: none; }
 .quick-action__title { font-weight: 600; font-size: 13.5px; }
 .quick-action__sub { font-size: 11.5px; color: var(--ink-faint); }
 
-/* Filtros */
-
 .filter-bar {
   display: flex;
   gap: 10px;
@@ -594,8 +558,6 @@ tbody tr:last-child td { border-bottom: none; }
 
 .filter-bar input[type="search"] { min-width: 200px; }
 
-/* Empty state */
-
 .empty-state {
   text-align: center;
   padding: 40px 20px;
@@ -603,8 +565,6 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .empty-state h3 { color: var(--ink-soft); font-size: 15px; margin-bottom: 6px; }
 .empty-state p { max-width: 320px; margin: 0 auto; }
-
-/* Toggle segmentado (entrada/saída) */
 
 .segmented {
   display: inline-flex;
@@ -660,8 +620,6 @@ footer.page-footer {
   border: 0;
 }
 
-/* Toast de feedback */
-
 .toast-container {
   position: fixed;
   right: 20px;
@@ -689,7 +647,6 @@ footer.page-footer {
 .toast--success { border-left-color: var(--success); }
 .toast--error { border-left-color: var(--danger); }
 
-/* Skip link para acessibilidade */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -700,10 +657,6 @@ footer.page-footer {
   z-index: 100;
 }
 .skip-link:focus { left: 12px; top: 12px; }
-
-/* ----------------------------------------------------
-   Responsividade
-   ---------------------------------------------------- */
 
 @media (max-width: 1080px) {
   .grid--stats { grid-template-columns: repeat(2, 1fr); }
